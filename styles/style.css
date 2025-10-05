@@ -150,6 +150,14 @@
   gap: 7px;
 }
 
+.like-icon {
+  cursor: pointer;
+  transform-origin: center;
+  width: 39px;
+  height: 36px; 
+  flex-shrink: 0;
+}
+
 .card__icon-button {
   display: flex;
   align-items: center;
@@ -158,14 +166,6 @@
   border: none;
   block-size: 38px;
   inline-size: 38px;
-}
-
-.like-icon {
-  cursor: pointer;
-  transform-origin: center;
-  width: 39px;
-  height: 36px; 
-  flex-shrink: 0;
 }
 
 .button {
