@@ -12,9 +12,10 @@
 
 .page {
   font-family: var(--font-main);
-  font-variation-settings: "wght" var(--font-main-weight-title);
   background-image: var(--bg-image);
+  font-variation-settings: "wght" var(--font-main-weight-title);
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .section-size {
@@ -41,6 +42,7 @@
 .header__title, .header__description {
   font-family: var(--font-accent);
   font-weight: 400;
+  text-align: center;
 }
 
 .header__title {
@@ -56,11 +58,11 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
-  background-color: var(--bg-color);
 }
 
 .article {
   border: var(--page-border);
+  background-color: var(--bg-color);
 }
 
 .article__title {
@@ -142,21 +144,31 @@
 .card__buttons {
   display: flex;
   justify-content: end;
+  align-items: center;
   padding-block-end: 25px;
   padding-inline-end: 25px;
+  gap: 7px;
 }
 
 .card__icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: transparent;
   border: none;
+  block-size: 38px;
+  inline-size: 38px;
 }
 
 .like-icon {
   cursor: pointer;
   transform-origin: center;
+  width: 39px;
+  height: 36px; 
+  flex-shrink: 0;
 }
 
-.card__like-button, .save-button, .dialog-button {
+.button {
   position: relative;
   border: var(--page-border);
   background: transparent;
@@ -165,7 +177,7 @@
   overflow: hidden;
 }
 
-.card__like-button::before, .save-button::before, .dialog-button::before {
+.button::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -174,11 +186,11 @@
   transition: transform 0.5s ease-in-out;
 }
 
-.card__like-button:hover::before, .save-button:hover::before, .dialog-button:hover::before {
+.button:hover::before {
   transform: translateX(0);
 }
 
-.card__like-button:focus, .save-button:focus, .dialog-button:focus {
+.button:focus {
   outline: none;
   box-shadow: var(--button-shadow);
 }
@@ -195,6 +207,7 @@
   font-size: 14px;
   line-height: 90%;
   z-index: 1;
+  text-align: center;
 }
 
 .button__text, .floppy-icon {
@@ -210,7 +223,6 @@
   align-items: center;
   padding-block-start: 50px;
   padding-block-end: 100px;
-  background-color: var(--bg-color);
 }
 
 .save-button {
@@ -220,6 +232,7 @@
   padding-inline: 20px;
   block-size: 55px;
   gap: 8px;
+  background-color: var(--bg-color);
 }
 
 dialog {
@@ -233,7 +246,7 @@ dialog[open] {
 }
 
 dialog::backdrop {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(4px);
 }
 
